@@ -1,78 +1,49 @@
-// h1 bt a, b
 
-var btn = document.getElementById('calc');
-var h1 = document.getElementById('result');
+function btn(){
+    let input = document.querySelector('.input').value
+    let elbtn = document.querySelector('.btn')
+    let piyoda = document.querySelector('.piyodatezligi')
+    let velosiped = document.querySelector('.velosipedtezligi')
+    let mashina = document.querySelector('.moshinatezligi')
+    let samalyot = document.querySelector('.samalyottezligi')
 
-btn.onclick = function(){
-    var c = document.getElementById('c').value;
-    var a = document.getElementById('a').value;
-    var b = document.getElementById('b').value;
-    a = parseInt(a);
-    b = parseInt(b);
-    if(c == '+'){
-        alert(a+b);
+    let piyodacha = Math.trunc(input/4)
+    let velosipedcha = Math.trunc( input/20)
+    let mashinacha = Math.trunc( input/70)
+    let samalyotcha =  Math.trunc(input/800)
+    if (0<input){
+        piyoda.innerHTML =  piyodacha
     }
-    else if(c == '*'){
-        alert(a*b)
+    else{
+        alert('naro`g`ri qiymat')
     }
-    else if(c =='/'){
-        alert(a/b)
+    if (0<input){
+        velosiped.innerHTML = velosipedcha
     }
-    else if(c =='-'){
-        alert(a-b)
+    else{
+        alert('naro`g`ri qiymat')
     }
+    if (0<input){
+        mashina.innerHTML = mashinacha
+    }
+    else{
+        alert('naro`g`ri qiymat')
+    }
+    if (0<input){
+        samalyot.innerHTML = samalyotcha
+    }
+    else{
+        alert('naro`g`ri qiymat')
+    }
+}
 
+var elInput = document.querySelector('.input')
 
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var elResult = document.querySelector('.result')
-// var elClick = document.querySelector('.click')
-// var elInput2 = document.querySelector('.input2')
-
-// var elInput1 = 'a'
-// var elInput2 = 'c'
-// var elInput3 = 'b'
-// btn.onclick = function () {
-// if(document.querySelector('.input2').value = '*') {
-    
-// }
-
-    
-// }
-
-// function btn(a,b,c) {
-//     if( elInput3.value =='*'){
-//         console.log(elInput1.value * elInput3.value);
-//     }
-
-    
-    
-// }
-// btn()
+input.addEventListener('keyup', function(evn){
+    if(evn.target.value.length >=2){
+        input.style.border = '2px solid green'
+    }
+    else{
+        input.style.border = '2px solid red'
+    }
+})
